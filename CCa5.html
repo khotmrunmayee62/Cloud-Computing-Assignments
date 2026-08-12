@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Grid Agent</title>
+</head>
+
+<body style="text-align:center;font-family:Arial">
+
+<h2>Grid Navigation</h2>
+
+<div id="grid" style="font-size:40px;line-height:60px"></div>
+
+<button onclick="move()">Move</button>
+
+<p id="msg">Start</p>
+
+<script>
+let path = ["🤖","➡️","➡️","⬇️","⬇️","🎯"];
+let i = 0;
+
+function show() {
+    document.getElementById("grid").innerHTML = path[i];
+    document.getElementById("msg").innerHTML =
+        i == path.length-1 ? "Goal Reached!" : "Agent Moving...";
+}
+
+function move() {
+    if (i < path.length-1) i++;
+    show();
+}
+
+show();
+</script>
+
+</body>
+</html>
